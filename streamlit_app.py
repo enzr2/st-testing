@@ -9,7 +9,7 @@ if option == True:
     st.write("user has been bleesed with a1")
 
 # text capitalizer
-st.write("\n\n")
+st.write("\n---\n")
 
 st.subheader("funny text capitalizer")
 prompt = st.text_input("input here: ")
@@ -26,3 +26,9 @@ for chr in prompt:
 
 word = "".join(word)
 st.write(word)
+
+# link to github
+st.write("\n---\n")
+
+st.subheader("The github")
+st.link_button("Github :100:","https://github.com/Jakeboiegg/st-testing.git")
