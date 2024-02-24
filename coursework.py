@@ -1,24 +1,25 @@
+
 import string #import these things for the code to work
 import random
 import webbrowser
+
 #jake word detector
-while True:
-    text = input("How are you feeling? ")
+def coursework(text):
     text = text.lower()
-    text = text.translate(str.maketrans('', '', string.punctuation)) #remove punctuation
-    text = text.split(" ") #split words into array for detection.
+    text = text.translate(str.maketrans('', '', string.punctuation)) #remove punctuation text = text.split(" ") #split words into array for detection.
+    text = text.split(" ")
 
     happy_list = ['great', 'awesome', 'joyful', 'happy', 'glad', 'content', 'acomplished', 'amazing', 'omg', 'okay', 'yippee', 'slay', 'good']
     sad_list = ['down', 'depressed', 'lonely', 'blue', 'heartbroken', 'unhappy', 'gloomy', 'melancholic', 'cry', 'tears', 'sad', 'demoralised', 'hurt', 'defeated', 'dejected', 'stressed', 'bad']
     angry_list = ['angry', 'frustrated', 'annoyed', 'grr', 'grrr', 'furious', 'enraged', 'mad', 'agitated', 'outraged', 'fuming', 'exasperated', 'displeased']
     fear_list = ['fear', 'fearful', 'worry', 'worried', 'afraid', 'terrified', 'anxious', 'nervous', 'scared', 'frightened', 'panick', 'panicking', 'hesitant', 'uneasy', 'tense', 'stammer']
-#^^ list of possible words to give wider variety of options to express themselves
+    #^^ list of possible words to give wider variety of options to express themselves
     emotion_arr = [0,0,0,0] #[happy,sad,angry,fearful]
 
     not_detected = False
 
     for word in text: #this is to check the emotion currently based of words used
-# count keywords
+        # count keywords
         if word == "not":
             not_detected = True
 
@@ -42,11 +43,11 @@ while True:
         if word in fear_list:
             emotion_arr[3] += 1
 
-# collate counting, check for when no words detected.
+    # collate counting, check for when no words detected.
     total = 0
     for emotion_value in emotion_arr:
         total += emotion_value
-    emotion = emotion_arr.index(max(emotion_arr))
+        emotion = emotion_arr.index(max(emotion_arr)) + 1
 
     print() #newline
     ## Recomendations gabriel
@@ -102,46 +103,43 @@ while True:
     }
 
     if total == 0: #no emotion detected
-        print("Well, idk what you're feeling, could you maybe try and use different words to explain you're emotion? ")
-    else:
-    #choose appropriate song and random food for user
+        message = ("Well, idk what you're feeling, could you maybe try and use different words to explain you're emotion? ")
+        emotion = 0
+        url = ""
+
+         #choose appropriate song and random food for user
     #nathan song food selector
-        if emotion == 0: #happy
-            song_list = list(happysong.keys())
-            randoms = song_list[random.randint(0,len(song_list)-1)]
-            url = happysong.get(randoms)
+    if emotion == 1: #happy
+        song_list = list(happysong.keys())
+        randoms = song_list[random.randint(0,len(song_list)-1)]
+        url = happysong.get(randoms)
 
-            randomf = random.choice(food)
-            print("Oh, nice! Great that you're feeling happy today\nbased on your feeling, try listening to {}\nAt the same time if you're feeling hungry, try making this '{}'".format(randoms,randomf))
+        randomf = random.choice(food)
+        message = ("Oh, nice! Great that you're feeling happy today \nbased on your feeling, try listening to {} \nAt the same time if you're feeling hungry, try making this '{}'".format(randoms,randomf))
 
-        if emotion == 1: #sad
-            song_list = list(sadsong.keys())
-            randoms = song_list[random.randint(0,len(song_list)-1)]
-            url = sadsong.get(randoms)
+    if emotion == 2: #sad
+        song_list = list(sadsong.keys())
+        randoms = song_list[random.randint(0,len(song_list)-1)]
+        url = sadsong.get(randoms)
 
-            randomf = random.choice(food)
-            print("Man, its alright you can get through it.\nwell because your feeling sad, try listening to {}\nAt the same time if you're feeling hungry, try making this '{}'".format(randoms,randomf))
+        randomf = random.choice(food)
+        message = ("Man, its alright you can get through it.\nwell because your feeling sad, try listening to {}\nAt the same time if you're feeling hungry, try making this '{}'".format(randoms,randomf))
 
-        if emotion == 2: #angry
-            song_list = list(angrysong.keys())
-            randoms = song_list[random.randint(0,len(song_list)-1)]
-            url = angrysong.get(randoms)
+    if emotion == 3: #angry
+        song_list = list(angrysong.keys())
+        randoms = song_list[random.randint(0,len(song_list)-1)]
+        url = angrysong.get(randoms)
 
-            randomf = random.choice(food)
-            print("Yea its like that sometimes\ntry listening to {}\nAt the same time if you're feeling hungry, try making this '{}'".format(randoms,randomf))
+        randomf = random.choice(food)
+        message = ("Yea its like that sometimes\ntry listening to {}\nAt the same time if you're feeling hungry, try making this '{}'".format(randoms,randomf))
 
-        if emotion == 3: #fear
-            song_list = list(fearsong.keys())
-            randoms = song_list[random.randint(0,len(song_list)-1)]
-            url = fearsong.get(randoms)
+    if emotion == 4: #fear
+        song_list = list(fearsong.keys())
+        randoms = song_list[random.randint(0,len(song_list)-1)]
+        url = fearsong.get(randoms)
 
-            randomf = random.choice(food)
-            print("Oh i see\nwell, if you're scared, why not listen to {}\nAt the same time if you're feeling hungry, try making this '{}'".format(randoms,randomf))
+        randomf = random.choice(food)
+        message = ("Oh i see\nwell, if you're scared, why not listen to {}\nAt the same time if you're feeling hungry, try making this '{}'".format(randoms,randomf))
 
-    print() #newline
-
-    prompt = input("Would you like us to play the song for you? (y/n) ")
-    if prompt.lower() == 'y':
-        webbrowser.open(url) #to play song easily for users comfort
-
-    break
+    output = [emotion,message,url]
+    return output
