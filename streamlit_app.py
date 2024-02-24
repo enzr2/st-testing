@@ -1,6 +1,8 @@
 import streamlit as st
 import random
 
+from coursework import coursework
+
 st.title("ying bing loves a math!!!!11!11!!")
 st.write("das so cool")
 
@@ -9,7 +11,7 @@ if option == True:
     st.write("user has been bleesed with a1")
 
 # text capitalizer
-st.write("\n---\n")
+st.write("---")
 
 st.subheader("funny text capitalizer")
 prompt = st.text_input("input here: ")
@@ -27,8 +29,22 @@ for chr in prompt:
 word = "".join(word)
 st.write(word)
 
+# coursework
+st.write("---")
+
+st.subheader("Coursework wooo")
+prompt2 = st.text_input("input here:")
+
+output = coursework(prompt2)
+if output[0] == 0:
+    st.write(output[1])
+
+else:
+    st.write(output[1])
+    st.link_button("Play video",output[2])
+
 # link to github
-st.write("\n---\n")
+st.write("---")
 
 st.subheader("The github")
 st.link_button("Github :100:","https://github.com/Jakeboiegg/st-testing.git")

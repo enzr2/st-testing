@@ -115,7 +115,7 @@ def coursework(text):
         url = happysong.get(randoms)
 
         randomf = random.choice(food)
-        message = ("Oh, nice! Great that you're feeling happy today \nbased on your feeling, try listening to {} \nAt the same time if you're feeling hungry, try making this '{}'".format(randoms,randomf))
+        message = ("Oh, nice! Great that you're feeling happy today \n\nbased on your feeling, try listening to {} \n\nAt the same time if you're feeling hungry, try making this '{}'".format(randoms,randomf))
 
     if emotion == 2: #sad
         song_list = list(sadsong.keys())
@@ -123,7 +123,7 @@ def coursework(text):
         url = sadsong.get(randoms)
 
         randomf = random.choice(food)
-        message = ("Man, its alright you can get through it.\nwell because your feeling sad, try listening to {}\nAt the same time if you're feeling hungry, try making this '{}'".format(randoms,randomf))
+        message = ("Man, its alright you can get through it.\n\nwell because your feeling sad, try listening to {}\n\nAt the same time if you're feeling hungry, try making this '{}'".format(randoms,randomf))
 
     if emotion == 3: #angry
         song_list = list(angrysong.keys())
@@ -131,7 +131,7 @@ def coursework(text):
         url = angrysong.get(randoms)
 
         randomf = random.choice(food)
-        message = ("Yea its like that sometimes\ntry listening to {}\nAt the same time if you're feeling hungry, try making this '{}'".format(randoms,randomf))
+        message = ("Yea its like that sometimes\n\ntry listening to {}\n\nAt the same time if you're feeling hungry, try making this '{}'".format(randoms,randomf))
 
     if emotion == 4: #fear
         song_list = list(fearsong.keys())
@@ -139,7 +139,7 @@ def coursework(text):
         url = fearsong.get(randoms)
 
         randomf = random.choice(food)
-        message = ("Oh i see\nwell, if you're scared, why not listen to {}\nAt the same time if you're feeling hungry, try making this '{}'".format(randoms,randomf))
+        message = ("Oh i see\n\nwell, if you're scared, why not listen to {}\n\nAt the same time if you're feeling hungry, try making this '{}'".format(randoms,randomf))
 
     output = [emotion,message,url]
     return output
