@@ -33,7 +33,7 @@ st.write(word)
 st.write("---")
 
 st.subheader("Coursework wooo")
-prompt2 = st.text_input("input here:",value= "im very happy :\)")
+prompt2 = st.text_input("input here:",value= "im very happy :)")
 
 output = coursework(prompt2)
 if output[0] == 0:
