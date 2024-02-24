@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 
-from coursework import coursework
+from coursework.coursework import coursework
 
 st.title("ying bing loves a math!!!!11!11!!")
 st.write("das so cool")
@@ -35,13 +35,16 @@ st.write("---")
 st.subheader("Coursework wooo")
 prompt2 = st.text_input("input here:",value= "im very happy :)")
 
+# output format [emotion, message1, massage2, url]
 output = coursework(prompt2)
+
 if output[0] == 0:
     st.write(output[1])
 
 else:
     st.write(output[1])
-    st.link_button("Play video",output[2])
+    st.link_button("Play video",output[3])
+    st.write(output[2])
 
 # link to github
 st.write("---")
