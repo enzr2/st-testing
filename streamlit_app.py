@@ -14,7 +14,7 @@ if option == True:
 st.write("---")
 
 st.subheader("funny text capitalizer")
-prompt = st.text_input("input here: ",placeholder="hee hee heeeee haweeeeeewwww")
+prompt = st.text_input("input here: ",value="hee hee heeeee haweeeeeewwww")
 prompt = list(prompt)
 
 word = []
@@ -33,7 +33,7 @@ st.write(word)
 st.write("---")
 
 st.subheader("Coursework wooo")
-prompt2 = st.text_input("input here:",placeholder= "im very happy :\)")
+prompt2 = st.text_input("input here:",value= "im very happy :\)")
 
 output = coursework(prompt2)
 if output[0] == 0:
