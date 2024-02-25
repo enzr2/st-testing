@@ -40,7 +40,7 @@ def text_capitaliser():
 
 def coursework_section():
     st.subheader("Coursework wooo")
-    prompt = st.text_input("input here:", value="im very happy :)")
+    prompt = st.text_input("How are you feeling?", value="im very happy :)")
     output = coursework(prompt)
 
     # Output format [emotion, message1, message2, url]
