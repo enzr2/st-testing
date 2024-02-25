@@ -14,11 +14,11 @@ if option == True:
 st.write("---")
 
 st.subheader("funny text capitalizer")
-prompt = st.text_input("input here: ",value="hee hee heeeee haweeeeeewwww")
-prompt = list(prompt)
+prompt_capitaliser = st.text_input("input here: ",value="hee hee heeeee haweeeeeewwww")
+prompt_capitaliser = list(prompt_capitaliser)
 
 word = []
-for chr in prompt:
+for chr in prompt_capitaliser:
 
     rand = random.randint(0,1)
     if rand == 0: chr = chr.lower()
@@ -33,10 +33,10 @@ st.write(word)
 st.write("---")
 
 st.subheader("Coursework wooo")
-prompt2 = st.text_input("input here:",value= "im very happy :)")
+prompt_coursework = st.text_input("input here:",value= "im very happy :)")
 
 # output format [emotion, message1, massage2, url]
-output = coursework(prompt2)
+output = coursework(prompt_coursework)
 
 if output[0] == 0:
     st.write(output[1])
