@@ -17,8 +17,6 @@ def main():
     if option:
         st.write("user has been bleesed with a1")
 
-    st.write("hii")
-
     # Text capitaliser
     st.write("---")
     text_capitaliser()
