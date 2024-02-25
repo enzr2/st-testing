@@ -1,4 +1,4 @@
-"""
+text = """
 import string #import these things for the code to work
 import random
 import webbrowser
@@ -65,7 +65,7 @@ def coursework(text):
         url = happysong.get(randoms)
 
         randomf = random.choice(food)
-        output.append("Oh, nice! Great that you're feeling happy today \n\nbased on your feeling, try listening to {}".format(randoms))
+        output.append("Oh, nice! Great that you're feeling happy today \\n\\nbased on your feeling, try listening to {}".format(randoms))
         output.append("At the same time if you're feeling hungry, try making this '{}'".format(randomf))
  
     if emotion == 2: #sad
@@ -74,7 +74,7 @@ def coursework(text):
         url = sadsong.get(randoms)
 
         randomf = random.choice(food)
-        output.append ("Man, its alright you can get through it.\n\nwell because your feeling sad, try listening to {}".format(randoms))
+        output.append ("Man, its alright you can get through it.\\n\\nwell because your feeling sad, try listening to {}".format(randoms))
         output.append("At the same time if you're feeling hungry, try making this '{}'".format(randomf))
 
     if emotion == 3: #angry
@@ -83,7 +83,7 @@ def coursework(text):
         url = angrysong.get(randoms)
 
         randomf = random.choice(food)
-        output.append("Yea its like that sometimes\n\ntry listening to {}".format(randoms))
+        output.append("Yea its like that sometimes\\n\\ntry listening to {}".format(randoms))
         output.append("At the same time if you're feeling hungry, try making this '{}'".format(randomf))
 
     if emotion == 4: #fear
@@ -92,7 +92,7 @@ def coursework(text):
         url = fearsong.get(randoms)
 
         randomf = random.choice(food)
-        output.append("Oh i see\n\nwell, if you're scared, why not listen to {}".format(randoms))
+        output.append("Oh i see\\n\\nwell, if you're scared, why not listen to {}".format(randoms))
         output.append("At the same time if you're feeling hungry, try making this '{}'".format(randomf))
  
     output.append(url)
