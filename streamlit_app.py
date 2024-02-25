@@ -1,7 +1,7 @@
 import streamlit as st
-import random
 
 from coursework.coursework import coursework
+from capitaliser.capitaliser import capitaliser
 
 st.title("ying bing loves a math!!!!11!11!!")
 st.write("das so cool")
@@ -15,18 +15,7 @@ st.write("---")
 
 st.subheader("funny text capitalizer")
 prompt_capitaliser = st.text_input("input here: ",value="hee hee heeeee haweeeeeewwww")
-prompt_capitaliser = list(prompt_capitaliser)
-
-word = []
-for chr in prompt_capitaliser:
-
-    rand = random.randint(0,1)
-    if rand == 0: chr = chr.lower()
-    if rand == 1: chr = chr.upper()
-    
-    word.append(chr)
-
-word = "".join(word)
+word = capitaliser(prompt_capitaliser)
 st.write(word)
 
 # coursework
